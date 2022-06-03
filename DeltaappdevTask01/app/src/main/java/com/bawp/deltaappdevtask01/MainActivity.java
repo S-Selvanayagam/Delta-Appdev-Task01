@@ -2,6 +2,7 @@ package com.bawp.deltaappdevtask01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -607,6 +608,8 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = findViewById(R.id.textView7);
             textView.setVisibility(View.VISIBLE);
             vibrator.vibrate(1000);
+            Intent intent = new Intent(this, scorepage.class);
+            startActivity(intent);
         }
         else {
             puzzle();
