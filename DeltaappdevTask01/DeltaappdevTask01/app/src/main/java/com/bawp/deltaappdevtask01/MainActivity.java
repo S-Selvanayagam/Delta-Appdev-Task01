@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     Button a42;
     Button a51;
     Button a52;
+    Button back;
     TextView hdis;
     TextView op1;
     TextView op2;
@@ -266,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
         res3 = findViewById(R.id.res3);
         res4 = findViewById(R.id.res4);
         res5 = findViewById(R.id.res5);
+        back = findViewById(R.id.button4);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         puzzle();
@@ -616,9 +618,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-
-
+    }
+    public void onBackPressed(View view) {
+        finish();
+        super.onBackPressed();
+        Intent i = new Intent(MainActivity.this, homepage.class);
+        startActivity(i);
     }
 
 }

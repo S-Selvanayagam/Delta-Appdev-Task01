@@ -20,7 +20,7 @@
             android:id="@+id/num1"
             android:layout_width="81dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="0"
             app:layout_row="0" />
@@ -29,7 +29,7 @@
             android:id="@+id/num2"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="1"
             app:layout_row="0" />
@@ -38,7 +38,7 @@
             android:id="@+id/num3"
             android:layout_width="82dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="2"
             app:layout_row="0" />
@@ -47,7 +47,7 @@
             android:id="@+id/num4"
             android:layout_width="79dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="3"
             app:layout_row="0" />
@@ -56,7 +56,7 @@
             android:id="@+id/num5"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="4"
             app:layout_row="0" />
@@ -65,7 +65,7 @@
             android:id="@+id/num6"
             android:layout_width="79dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="0"
             app:layout_row="1" />
@@ -74,7 +74,7 @@
             android:id="@+id/num7"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="1"
             app:layout_row="1" />
@@ -83,7 +83,7 @@
             android:id="@+id/num8"
             android:layout_width="79dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="2"
             app:layout_row="1" />
@@ -92,7 +92,7 @@
             android:id="@+id/num9"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="3"
             app:layout_row="1" />
@@ -101,7 +101,7 @@
             android:id="@+id/num10"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
-            android:onClick="clickInput"
+
             android:text="Button"
             app:layout_column="4"
             app:layout_row="1" />
@@ -352,10 +352,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout2"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <TextView
         android:id="@+id/textView7"
@@ -368,19 +368,35 @@
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout2"
+        app:layout_constraintVertical_bias="0.451" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
+        android:gravity="center"
         android:onClick="submitAnswer"
+        android:text="SUBMIT"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout2"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.69" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onBackPressed"
+        android:text="back"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hdis"
+        app:layout_constraintVertical_bias="0.484" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
