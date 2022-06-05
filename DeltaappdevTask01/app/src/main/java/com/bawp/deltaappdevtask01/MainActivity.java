@@ -2,7 +2,9 @@ package com.bawp.deltaappdevtask01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     TextView res5;
     private Boolean isClicked;
     String carry;
+    int highscore = 0;
 
 
     public void puzzle() {
@@ -366,7 +369,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a21.getText()) == ""){
                     a21.setText(carry);
-                    carry = "";
                 }
 
             }
@@ -376,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a22.getText()) == ""){
                     a22.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -386,7 +388,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a31.getText()) == ""){
                     a31.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -396,7 +398,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a32.getText()) == ""){
                     a32.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -406,7 +408,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a41.getText()) == ""){
                     a41.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -416,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a42.getText()) == ""){
                     a42.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -426,7 +428,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a51.getText()) == ""){
                     a51.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -436,7 +438,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (String.valueOf(a52.getText()) == ""){
                     a52.setText(carry);
-                    carry = "";
+
                 }
 
             }
@@ -620,8 +622,19 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = findViewById(R.id.textView7);
                 textView.setVisibility(View.VISIBLE);
                 vibrator.vibrate(1000);
+                if (score >= highscore);
+                {
+                    highscore = score;
+                }
+                SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("key", highscore);
+                editor.commit();
+
                 Intent intent = new Intent(this, scorepage.class);
                 startActivity(intent);
+
+
             } else {
                 puzzle();
 
