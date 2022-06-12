@@ -1,6 +1,5 @@
 package com.bawp.deltaappdevtask01;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
@@ -26,8 +25,10 @@ public class homepage extends MainActivity {
                 "sharedPrefs", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
+        SharedPreferences sharedPreferences1 = getSharedPreferences("myPrefsKey",Context.MODE_PRIVATE);
+        final int storedpreference = sharedPreferences1.getInt("key",highscore);
 
-        highscorebtn.setText("High score is:"+ String.valueOf(highscore));
+        highscorebtn.setText("High score is:"+ String.valueOf(storedpreference));
         if (isDarkModeOn) {
             AppCompatDelegate
                     .setDefaultNightMode(

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isClicked;
     String carry;
     int highscore = 0;
+    Boolean ButtonClicked = false;
+    TextView timer;
 
 
     public void puzzle() {
@@ -239,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         num1 = findViewById(R.id.num1);
         num2 = findViewById(R.id.num2);
         num3 = findViewById(R.id.num3);
@@ -272,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
         res5 = findViewById(R.id.res5);
         back = findViewById(R.id.button4);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        timer = findViewById(R.id.button8);
 
         puzzle();
 
@@ -447,6 +452,15 @@ public class MainActivity extends AppCompatActivity {
         hdis.setText(( "NUMBER OF LIVES : " + String.valueOf(heart)));
     }
 
+
+    @Override
+
+    protected void onSaveInstanceState (Bundle outState) {
+
+        super.onSaveInstanceState (outState);
+
+    }
+    //hohoho
 
     public void submitAnswer(View view) {
         try {
